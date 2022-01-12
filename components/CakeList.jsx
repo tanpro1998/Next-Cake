@@ -1,6 +1,6 @@
 import styles from "../styles/CakeList.module.css";
 import CakeCard from "./CakeCard";
-const CakeList = () => {
+const CakeList = ({cakeList}) => {
   const images = [
     { src: "/img/cake4.png", title: "Sweet Cake", price: "$15.00" },
     { src: "/img/cake5.png", title: "Wedding Cake", price: "$20.00" },
@@ -22,8 +22,8 @@ const CakeList = () => {
       </p>
 
       <div className={styles.wrapper}>
-        {images.map((image, index) => (
-          <CakeCard key={index} image={image} />
+        {cakeList.map((cake) => (
+          <CakeCard key={cake._id} cake={cake} />
         ))}
       </div>
     </div>

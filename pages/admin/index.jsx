@@ -9,7 +9,9 @@ const Index = ({ products, orders }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete("http://localhost:3000/api/products/" + id);
+      const res = await axios.delete(
+        "http://localhost:3000/api/products/" + id
+      );
       setCakeList(cakeList.filter((cake) => cake._id !== id));
     } catch (err) {
       console.log(err);
@@ -45,7 +47,7 @@ const Index = ({ products, orders }) => {
               <th>Action</th>
             </tr>
           </tbody>
-          {products.map((product) => (
+          {cakeList.map((product) => (
             <tbody key={product._id}>
               <tr className={styles.trTitle} key={product.id}>
                 <td>

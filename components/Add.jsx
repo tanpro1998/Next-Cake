@@ -11,9 +11,9 @@ const Add = ({ setClose }) => {
   const [extraOptions, setExtraOptions] = useState([]);
 
   const changePrice = (e, index) => {
-    const currentIndex = prices;
-    currentIndex[index] = e.target.value;
-    setPrices(currentIndex);
+    const currentPrices = prices;
+    currentPrices[index] = e.target.value;
+    setPrices(currentPrices);
   };
 
   const handleExtraInput = (e) => {
